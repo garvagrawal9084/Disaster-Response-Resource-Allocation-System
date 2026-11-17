@@ -60,3 +60,19 @@ SELECT scenario_id, revision, method, runtime_ms FROM runs ORDER BY created_at D
 ```
 
 To export a backup, run `docker compose exec -T database pg_dump -U drras -d drras > drras-backup.sql` from the repository root. Save that file somewhere you can find later.
+
+## Run the black box tests
+
+From the repository root, install the test dependencies and run the suite.
+
+```sh
+npm ci --prefix tests/black_box
+(cd tests/black_box && npx playwright install chromium)
+bash tests/black_box/run.sh
+```
+
+The runner needs Node.js 20 or later, Python 3.10 or later, curl, and Docker with Compose. It creates a fresh Compose project, forces routing fallback, runs five browser checks followed by 18 API checks, then restarts the database and backend for the final persistence check. It removes its temporary stack and database volume at exit.
+
+The default test dashboard and API ports are 18080 and 18000. Override them with `DRRAS_TEST_FRONTEND_PORT` and `DRRAS_TEST_API_PORT`. To use an installed Chromium-based browser, set `DRRAS_BROWSER_EXECUTABLE` to its executable path and skip the Playwright browser installation.
+
+The runner prints the results directory. `api_results.json` and `browser_results.json` record the case IDs, expected and actual outcomes, and verdicts. `api_trace.json` records the test HTTP requests and responses. The runner exits with a nonzero status if setup fails or a case fails or is blocked.

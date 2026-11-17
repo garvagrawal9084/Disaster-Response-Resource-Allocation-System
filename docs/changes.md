@@ -28,3 +28,7 @@ Keep a short entry here when a meaningful part of the application is added or ch
 
 - Added dashboard views for saved allocation runs and the current revision's travel matrix. Run history opens each run with its original scenario snapshot. The matrix can be filtered by affected area and estimate source.
 - Added an area coverage breakdown to current and historical allocation results. See [frontend.md](frontend.md).
+
+## 2026-11-17 — Black box test suite
+
+- Added reproducible browser and HTTP checks covering scenario data, input validation, routing fallback, allocation comparisons, history, and persistence. See the [black box test instructions](docker.md#run-the-black-box-tests).
