@@ -1,7 +1,7 @@
 """Source-aware unit cases for the DRRAS allocation, routing, and input branches.
 
-These checks are agent-executed evidence for Pratibha Yadav to review and repeat.
-They are not a substitute for Garv Agrawal's pending black-box system tests.
+Pratibha Yadav executed W01-W27 on 18 November 2026; the JUnit and coverage
+records are saved in docs/evidence. Garv Agrawal's black-box suite is separate.
 """
 
 from copy import deepcopy

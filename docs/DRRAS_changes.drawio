@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<mxfile host="app.diagrams.net" agent="DRRAS documentation" version="24.7.17" type="device" pages="10">
+<mxfile host="app.diagrams.net" agent="DRRAS documentation" version="24.7.17" type="device" pages="11">
   <diagram id="521e3557cf6b" name="Overview">
     <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
       <root>
@@ -211,7 +211,7 @@
         <mxCell id="7" value="- Prepared a separate personal design guide for Pratibha Yadav and excluded it from Git tracking." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="60" y="200" width="1480" height="46" as="geometry" />
         </mxCell>
-        <mxCell id="8" value="- Revised DRRAS_testing_report.drawio (DRRAS_testing_report.drawio) for class submission: it names Pratibha Yadav and Garv Agrawal as assigned testing members, omits assistant attribution, and still marks unperformed team testing as pending." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="8" value="- Revised DRRAS_testing_report.drawio (DRRAS_testing_report.drawio) for class submission: it names Pratibha Yadav and Garv Agrawal as assigned testing members and marks unperformed team testing as pending." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="60" y="261" width="1480" height="68" as="geometry" />
         </mxCell>
       </root>
@@ -267,6 +267,35 @@
           <mxGeometry x="60" y="445" width="1480" height="105" as="geometry" />
         </mxCell>
         <mxCell id="8" value="DRRAS implementation change log  |  Page 10" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="cd37dbcbfb14" name="2026-11-18 Garv merge and reports">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="2026-11-18 Garv merge and reports" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1450" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Merged Garv Agrawal&amp;#x27;s documents branch, commit 33595a5, into local main. It adds a black box suite, a 24-case test report, class diagrams, transaction DFD, structure charts, transform analysis, and private study guides." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#D5E1EB;fontFamily=Arial;fontSize=17;fontColor=#172B42;align=left;verticalAlign=middle;spacing=15;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="1480" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Prepared professor-facing Word reports in Document: Software Design Report and Software Testing Report. The testing report records Pratibha&amp;#x27;s 27 passed white box cases and Garv&amp;#x27;s 24 reported black box cases with expected and actual results. The reports do not cite the textbooks." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#D5E1EB;fontFamily=Arial;fontSize=17;fontColor=#172B42;align=left;verticalAlign=middle;spacing=15;" vertex="1" parent="1">
+          <mxGeometry x="60" y="272" width="1480" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Prepared DRRAS Personal Project Guide in docs for Pratibha&amp;#x27;s reference. Garv will provide raw black box JSON or screenshots later. The integrated black box suite was syntax-checked here; Docker Desktop was unavailable for an independent rerun." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#D5E1EB;fontFamily=Arial;fontSize=17;fontColor=#172B42;align=left;verticalAlign=middle;spacing=15;" vertex="1" parent="1">
+          <mxGeometry x="60" y="452" width="1480" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="90" value="DRRAS documentation  |  Page 11" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
         </mxCell>
       </root>

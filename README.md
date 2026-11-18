@@ -22,7 +22,9 @@ Stop the stack with `docker compose down`. The named database volume keeps scena
 
 ## Project guide
 
-- [Documentation index](docs/DRRAS_README.drawio) lists the editable draw.io guides and reports.
+- [Software design report](<Document/DRRAS Software Design Report.docx>) and [software testing report](<Document/DRRAS Software Testing Report.docx>) are the professor-facing reports. Garv's class, DFD, structure, transform, and black box reports are also in `Document/`.
+- [Personal project guide](<docs/DRRAS Personal Project Guide.docx>) explains the project and Pratibha's white box result in plain language. Garv's study guides and internal draw.io references are in `docs/`.
+- [Documentation index](docs/DRRAS_README.drawio) lists the project guides and editable internal draw.io references.
 - [Backend and database walkthrough](docs/DRRAS_backend.drawio) explains the workflow, schema, API, solver, and how to modify the implementation.
 - [Frontend behavior](docs/DRRAS_frontend.drawio) describes the dashboard and its API integration.
 - [Docker and local development](docs/DRRAS_docker.drawio) covers ports, settings, startup, and logs.

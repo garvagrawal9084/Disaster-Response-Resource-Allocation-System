@@ -17,7 +17,7 @@
         <mxCell id="5" value="DRRAS Software Testing Report  |  Page 1" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="6" value="Project: Disaster Response Resource Allocation System (DRRAS)   Baseline: Git commit 8591467 on main   Report date: 18 November 2026   Status: Pratibha Yadav ran W01-W27: 27 passed; source review and Garv&amp;#x27;s black box tests pending." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="6" value="Project: Disaster Response Resource Allocation System (DRRAS)   Baseline: Git commit 8591467 on main   Report date: 18 November 2026   Status: Pratibha ran W01-W27: 27 passed; Garv reported BB-01–BB-24: 24 passed. Raw black box files and Pratibha&amp;#x27;s source sign-off pending." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="60" y="118" width="1480" height="71" as="geometry" />
         </mxCell>
       </root>
@@ -40,7 +40,7 @@
         <mxCell id="5" value="DRRAS Software Testing Report  |  Page 2" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="6" value="This report records Pratibha Yadav&amp;#x27;s white box test execution on 18 November 2026 and provides cases for the remaining team testing. A Pass means a recorded observation matched the expected result. Pending means no actual result exists yet. The 27 source-aware tests have a saved JUnit run record and coverage report. Pratibha&amp;#x27;s source review and sign-off remain pending. Garv Agrawal must execute the Black Box Testing cases. Earlier demonstration notes without case-level evidence are not counted as verified results." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="6" value="This internal report records Pratibha Yadav&amp;#x27;s W01-W27 execution on 18 November 2026 and an earlier proposed black box suite B01-B22. The professor-facing DRRAS Software Testing Report in Document has the current combined case record. Garv Agrawal reported a separate BB-01–BB-24 suite on 17 November; his raw JSON files are to be attached. A Pass means an observed result matched its expected result. Pending means no actual result was recorded for that specific planned case ID." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="60" y="118" width="1480" height="119" as="geometry" />
         </mxCell>
       </root>
@@ -110,7 +110,7 @@
         <mxCell id="13" value="Black Box Testing: use the application/API against requirements without using source behavior as the oracle; record actual results and evidence." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
           <mxGeometry x="290" y="222" width="620" height="56" as="geometry" />
         </mxCell>
-        <mxCell id="14" value="Assigned; execution and sign-off pending." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+        <mxCell id="14" value="Reported BB-01–BB-24: 24 passed on 17 November 2026. Raw machine results and screenshots to be attached by Garv." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
           <mxGeometry x="910" y="222" width="630" height="56" as="geometry" />
         </mxCell>
         <mxCell id="15" value="The textbook prefers testing independent of development to reduce bias. Both team members contributed code, so the report discloses that limitation. A teacher or another reviewer can independently review the results." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
@@ -707,13 +707,13 @@
         <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="4" value="7 Black box suite for Garv Agrawal" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+        <mxCell id="4" value="7 Earlier planned black box cases B01-B22" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
         </mxCell>
         <mxCell id="5" value="DRRAS Software Testing Report  |  Page 10" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="6" value="Execution setup: Start Docker Desktop, then from the repository root run docker compose up --build --wait -d; inspect docker compose ps. Use http://localhost:8080 and http://localhost:8080/api/docs. Use a newly created simulated test scenario; never use operational data. Record the response code, visible output, screenshot or response body, date, and defect ID for each case. For fallback B16, set OSRM_URL empty before a fresh scenario revision so a saved matrix is not reused. Cases involving restart must not delete the database volume." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="6" value="This table is an earlier proposed suite with IDs B01-B22. It was not the suite Garv executed; his 24 recorded cases have IDs BB-01 to BB-24 and are in the professor-facing Word testing report. If these B cases are later run separately, start Docker Desktop and record the response code, visible output, date, and evidence for each case. A saved matrix must be refreshed by changing the scenario revision before testing fallback routing." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="60" y="118" width="1480" height="119" as="geometry" />
         </mxCell>
         <mxCell id="7" value="ID" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
@@ -910,7 +910,7 @@
         <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="4" value="7 Black box suite for Garv Agrawal (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+        <mxCell id="4" value="7 Earlier planned black box cases B01-B22 (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
         </mxCell>
         <mxCell id="5" value="DRRAS Software Testing Report  |  Page 11" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
@@ -1110,7 +1110,7 @@
         <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="4" value="7 Black box suite for Garv Agrawal (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+        <mxCell id="4" value="7 Earlier planned black box cases B01-B22 (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
         </mxCell>
         <mxCell id="5" value="DRRAS Software Testing Report  |  Page 12" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
@@ -1142,7 +1142,7 @@
         <mxCell id="6" value="1. Pratibha: review each W01-W27 case against allocation.py, routing.py, and models.py. Inspect the uncovered branches shown in the coverage report, especially allocation.py line 56 and routing.py lines 30 and 58-61. Record any defects or additional tests, then sign and date the white box result. The 96% figure applies only to the three selected modules, not main.py, repository.py, or frontend code." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="60" y="118" width="1480" height="91" as="geometry" />
         </mxCell>
-        <mxCell id="7" value="2. Garv: run B01-B22 with the integrated stack, fill every Actual Result and Status cell, attach screenshots/API responses and defect IDs, then rerun any failed case after a fix. Test with new simulated data. Record exact versions/settings and date." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="7" value="2. Garv: attach the raw api_results.json, browser_results.json, api_trace.json and any screenshots for his completed BB-01–BB-24 suite. Check that they agree with his report and record any defect or rerun. The older planned B01-B22 table above remains Pending because it was not executed under those IDs." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="60" y="223" width="1480" height="68" as="geometry" />
         </mxCell>
         <mxCell id="8" value="3. Together: reconcile failures with the SRS and decide whether each is a defect or a clarified requirement. Complete a final system test and, if required by the course, obtain supervisor/user acceptance evidence. Update this report and docs/DRRAS_changes.drawio; do not submit Pending cells as passed." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
@@ -1168,7 +1168,7 @@
         <mxCell id="5" value="DRRAS Software Testing Report  |  Page 14" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="6" value="Pratibha Yadav executed W01-W27 on 18 November 2026: 27 passed and 96% branch-measured coverage across the selected modules. Black box, database integration, live routing, end-to-end system, performance, and acceptance outcomes are not established by this report. Formal closure awaits Pratibha&amp;#x27;s source review and sign-off and Garv&amp;#x27;s executed black box record." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+        <mxCell id="6" value="Pratibha Yadav executed W01-W27 on 18 November 2026: 27 passed with 96% measured coverage across the selected modules. Garv&amp;#x27;s separate report records 24 passing black box cases. His raw files and Pratibha&amp;#x27;s source review and sign-off remain pending. Live routing, mobile, load, and operational results are not established by these records." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="60" y="118" width="1480" height="71" as="geometry" />
         </mxCell>
       </root>
