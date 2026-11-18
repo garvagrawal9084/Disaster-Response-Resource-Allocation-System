@@ -1,0 +1,10 @@
+__pycache__/
+.pytest_cache/
+.venv/
+.coverage
+docs/evidence/.coverage
+docs/evidence/*_run.txt
+.DS_Store
+docs/DRRAS_personal_guide.drawio
+docs/DRRAS_design_guide.drawio
+tmp/

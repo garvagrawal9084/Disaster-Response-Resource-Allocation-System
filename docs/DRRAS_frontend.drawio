@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="DRRAS documentation" version="24.7.17" type="device" pages="2">
+  <diagram id="f2ed8f52acf1" name="Overview">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Overview" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Frontend behavior  |  Page 1" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="The React and TypeScript app runs in the browser. main.tsx mounts App.tsx, which owns navigation, forms, the selected scenario, and current run results. ScenarioMap.tsx owns Leaflet and api.ts sends requests to FastAPI through the same origin. The database is the source of truth for scenarios and runs." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="- Overview shows demand, supply, current baseline coverage, and the selected scenario&amp;#x27;s map." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="203" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="- Scenario data creates scenarios and adds or removes areas and bases. The map uses severity colors for areas and a separate marker for each base. A list remains usable if OpenStreetMap tiles fail to load." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="264" width="1480" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="- Travel matrix lists the saved travel times and distances for the selected scenario revision. Filter by affected area and estimate source to distinguish OSRM road estimates from straight-line fallback estimates. Run either allocation method first to generate the matrix." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="346" width="1480" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="- Allocations runs either method and shows the saved assignments, travel estimates, metrics, and runtime. The area coverage table shows how many ambulances each area needed and received, including areas that received zero." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="428" width="1480" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="- Compare results shows the latest baseline and optimized runs for the scenario&amp;#x27;s current revision. The difference is optimized minus baseline. The map&amp;#x27;s dashed lines connect assigned bases and areas." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="511" width="1480" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="- Run history lists saved runs across scenario revisions, newest first. Open a run to see its original map, assignments, area coverage, and metrics." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="593" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="After an input changes, the API returns the new revision. The frontend loads runs for that revision, keeping older results out of the current comparison. Run history retrieves each run with the scenario snapshot saved when the run completed, so locations removed later still appear in the original plan. Loading and request errors appear in the dashboard." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="653" width="1480" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="If the earlier prototype saved custom scenarios on the dashboard&amp;#x27;s current browser origin, Import custom browser scenarios appears in Scenario data. Import copies the scenarios, areas, and bases into the database. The browser retains the original data. Repeating the import uses the original scenario IDs to find the same database records. The old prototype&amp;#x27;s browser previews were temporary, so the backend generates new runs." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="762" width="1480" height="95" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="33b295c14a43" name="Overview cont">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Overview (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Frontend behavior  |  Page 2" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="See the backend walkthrough (DRRAS_backend.drawio) for the API, schema, solver, and metric formulas." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

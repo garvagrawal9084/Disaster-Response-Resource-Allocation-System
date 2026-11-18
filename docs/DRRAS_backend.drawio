@@ -1,0 +1,693 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="DRRAS documentation" version="24.7.17" type="device" pages="12">
+  <diagram id="cf67d91112c6" name="Overview">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Overview" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 1" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="fbfc8138313f" name="What the system does">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="What the system does" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 2" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="DRRAS helps a coordinator decide how many ambulances each resource base could send to each affected area in a simulated disaster. The inputs are the scenario, the locations of its bases and areas, the number of ambulances at each base, and the demand and severity of each area. The output is a set of proposed assignments and measures the coordinator can compare. Population is recorded and displayed. Demand is entered explicitly by the coordinator." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="A typical demonstration goes through these steps:" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="227" width="1480" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="1. Open the dashboard and select a sample. In Scenario data, show the severity-colored areas and the base markers. Each base has its own stock and each area has its own demand." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="289" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="2. In Allocations, run the baseline. The first run requests road times from OSRM and stores one matrix row for each base and area pair. When OSRM cannot supply a pair, DRRAS saves an estimated time for that pair and labels it." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="349" width="1480" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="3. Run the optimizer. It reads the same matrix and the original stock. Both runs record assignments, metrics, and runtime in the database." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="431" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="4. Open Compare results to see the two maps and the metric differences. The difference is optimized minus baseline. A smaller travel cost and a larger coverage ratio are generally desirable. One method may improve some measures while worsening others." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="492" width="1480" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="5. Refresh the browser and show that the results are still there. Add or remove an area or a base, then show that the dashboard requires fresh runs for the updated scenario. The previous runs remain in API history." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="574" width="1480" height="68" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="9848b189784c" name="Source files and ownership">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Source files and ownership" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 3" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="File" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Responsibility" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="118" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="app/main.py (../backend/app/main.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="166" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="FastAPI endpoints, startup configuration, request transactions, and orchestration for a run" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="166" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="app/models.py (../backend/app/models.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="214" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Input shapes, allowed severity values, coordinate ranges, and quantity validation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="214" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="app/repository.py (../backend/app/repository.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="262" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Parameterized SQL, migrations, sample loading, and queries for scenarios, matrices, and runs" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="262" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="app/routing.py (../backend/app/routing.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="310" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="OSRM Table request, response validation, and straight-line estimates" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="310" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="app/allocation.py (../backend/app/allocation.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="358" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Baseline, OR-Tools model, plan validation, and metric formulas" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="358" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="app/samples.json (../backend/app/samples.json)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="406" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Simulated scenarios for Hyderabad, Visakhapatnam, and New Delhi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="406" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="001_initial.sql (../backend/migrations/001_initial.sql)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="454" width="400" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="PostGIS extension, tables, foreign keys, and database constraints" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="454" width="1080" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="api.ts (../frontend/src/api.ts)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="510" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="Browser requests and API error messages" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="510" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="App.tsx (../frontend/src/App.tsx)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="558" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="Scenario editing, allocation actions, and comparison views" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="558" width="1080" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="df72636583f6" name="Database design">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Database design" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 4" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="D1, D2, and D3 are the data stores named in the requirements. All three live in one PostgreSQL database." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Store" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Table" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="180" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="What a row represents" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="180" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="D1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="228" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="scenarios" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="228" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="A named scenario, its region, sample flag, and current revision" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="228" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="D1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="276" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="areas" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="276" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="An affected location with population, severity, and ambulance demand" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="276" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="D1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="324" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="resource_bases" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="324" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="A base with a map location" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="324" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="D1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="372" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="resources" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="372" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="The number of ambulances available at one base" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="372" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="D2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="230" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="travel_matrix" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="420" width="620" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="Time in seconds, distance in meters, and fallback status for one pair at one revision" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="420" width="630" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="D3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="476" width="230" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="runs" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="476" width="620" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="One allocation execution, its method and runtime, the input snapshot, and solver settings" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="476" width="630" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="D3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="532" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="allocations" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="532" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="The positive quantity one run assigns from one base to one area" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="532" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="D3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="580" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="metrics" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="580" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="The six allocation quality measures for one run" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="580" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="Locations use geometry(Point, 4326). The browser sends { &amp;quot;lat&amp;quot;: ..., &amp;quot;lng&amp;quot;: ... }. PostGIS stores a point in longitude, latitude order, so the repository calls ST_MakePoint(lng, lat) and reads it back with ST_X and ST_Y." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="644" width="1480" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="A matrix row is keyed by scenario, revision, base, and area. An allocation references a run and a matrix row for that same scenario and revision. Database checks enforce allowed severity, valid coordinate ranges, and positive or nonnegative quantities where appropriate. The backend validates each complete plan before saving, including totals per base and per area. Those totals span several rows, so they are checked together in validate_assignments." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="729" width="1480" height="95" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="033b8cda42ee" name="Database design cont">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Database design (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 5" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Adding or removing a location increments the scenario revision. Removal marks the location inactive so historical foreign keys remain valid. A run also stores a JSON copy of the scenario inputs. That snapshot preserves the names, coordinates, quantities, and severity used by the run even if a sample is restored later. The comparison screen selects the latest saved run for each method at the current revision. Earlier revisions remain accessible through the history endpoints." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Scenario edits and allocation runs lock their scenario row in a database transaction. This ensures two requests for the same scenario agree on which revision they are using and prevents simultaneous runs from creating competing matrices. A matrix, a run, its assignments, and metrics are committed together when a new matrix is needed. An error rolls that transaction back. The planner copies the stock into its own calculations, so a proposed assignment does not change stored inventory." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="227" width="1480" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="On startup, FastAPI applies the SQL files in filename order. The schema_migrations table records which migrations ran successfully, and a PostgreSQL advisory lock prevents two startup processes from applying the same migration simultaneously. Startup inserts missing built-in samples and keeps previously saved ones." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="336" width="1480" height="71" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="30838f67fdf8" name="API reference">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="API reference" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 6" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="All paths below start with /api. Swagger UI at &amp;lt;http://localhost:8080/api/docs&amp;gt; lets you inspect input schemas and call endpoints from the browser." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Method and path" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Request or result" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="180" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="GET /health" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="228" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Confirms the API can query PostgreSQL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="228" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="GET /scenarios" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="276" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Lists scenarios with their active areas, bases, and revisions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="276" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="POST /scenarios" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="324" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Accepts name, region, and optional description" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="324" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="GET /scenarios/{id}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="372" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Returns one current scenario" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="372" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="POST /scenarios/{id}/areas" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Accepts name, location, population, severity, and demand" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="420" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="POST /scenarios/{id}/bases" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="468" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="Accepts name, location, and quantity" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="468" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="DELETE /scenarios/{id}/areas/{areaId}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="516" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="Removes an area from the current scenario and returns the updated scenario" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="516" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="DELETE /scenarios/{id}/bases/{baseId}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="564" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="Removes a base from the current scenario and returns the updated scenario" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="564" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="POST /scenarios/restore-samples" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="612" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="Restores the three built-in scenarios, with custom scenarios and saved runs retained" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="612" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="POST /scenarios/import" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="660" width="400" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="Imports a custom scenario from the former browser prototype. Accepts its id, scenario fields, and arrays of area and base inputs. The original ID makes repeated imports return the same database scenario." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="660" width="1080" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="GET /scenarios/{id}/matrix" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="716" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="Returns the saved pair list, empty until the first run. Pass ?revision=N to inspect a historical matrix." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="716" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="POST /scenarios/{id}/runs/baseline" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="764" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="Runs and saves the baseline, returning assignments and metrics" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="764" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="POST /scenarios/{id}/runs/optimized" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="812" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="Runs and saves the optimizer, returning assignments and metrics" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="812" width="1080" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="fa6ef95acfd4" name="API reference cont">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="API reference (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 7" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Method and path" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Request or result" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="118" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="GET /scenarios/{id}/runs" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="166" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Returns the current revision and its latest saved run for each method" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="166" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="GET /scenarios/{id}/runs/history" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="214" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Lists historical runs, newest first. Supports limit and offset." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="214" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="GET /scenarios/{id}/runs/{runId}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="262" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Returns one saved run with its original scenario snapshot" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="262" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="The API returns HTTP 404 for unknown scenarios or locations and HTTP 422 for invalid inputs or a run without both areas and bases. Each scenario accepts up to 40 active areas and 40 active bases so a single OSRM request contains at most 80 points. Demand and stock are integers from 0 through 1,000,000. Both bounds can be found in models.py. Database connection failures return HTTP 503 when the API is running and can detect the failure." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="326" width="1480" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Try the baseline using the Hyderabad sample:" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="435" width="1480" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="curl -X POST http://localhost:8080/api/scenarios/musi-flood/runs/baseline&#10;curl http://localhost:8080/api/scenarios/musi-flood/matrix&#10;curl -X POST http://localhost:8080/api/scenarios/musi-flood/runs/optimized&#10;curl http://localhost:8080/api/scenarios/musi-flood/runs" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5F8FB;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="497" width="1480" height="113" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Each assignment contains baseId, areaId, quantity, travelMinutes, and isFallback. The run&amp;#x27;s usesFallback reports whether its matrix contains any estimated pair, including pairs that the plan did not use." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="624" width="1480" height="71" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="3f56638863b4" name="Routing">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Routing" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 8" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="The routing service sends base coordinates as sources and area coordinates as destinations in one request. The result is directional, from a base to an area. The backend rounds durations to whole seconds and stores distances in meters. An unavailable endpoint, unusable response, or missing pair uses the Haversine great-circle distance. The fallback time is distance divided by a constant speed, 30 km/h by default. That value is a project modeling assumption. The dashed map lines connect the assigned endpoints. Road travel times and distances come from the matrix. OSRM Table API (https://project-osrm.org/docs/v5.24.0/api/#table-service)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Once saved, the matrix is reused for the life of that scenario revision, including fallback pairs. This lets a comparison use identical inputs even if OSRM becomes available between runs. An input change creates a fresh revision and the next allocation creates its new matrix." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="251" width="1480" height="71" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="26b4e6d0e4b5" name="How the two allocation methods work">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="How the two allocation methods work" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 9" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Baseline. Visit the areas in severity order: Critical, High, Medium, Low. For each area, sort the bases by travel time and send as many units as possible from each base until the area is served or all stock is used. For equal severity or travel times, sort by the corresponding record ID so a repeated run gets the same ordering. This method is easy to explain and prioritizes severe areas. An early decision can use stock that would have reduced travel elsewhere." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Optimizer. OR-Tools solves a minimum-cost flow problem. A source represents the total number of units demanded. Source-to-base arcs have capacities equal to base stock. Base-to-area arcs have a per-unit cost equal to the travel time in seconds. Each area must receive flow equal to its demand. A direct arc from the source to each area represents unmet demand and costs 7,200 per missing unit by default. Flow through that direct arc becomes unmet demand in the metrics. Only base-to-area flow becomes an ambulance assignment. The solver returns whole units and the backend validates the resulting plan independently. OR-Tools minimum-cost flow (https://developers.google.com/optimization/flow/mincostflow)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="227" width="1480" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="The objective, in seconds, is:" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="383" width="1480" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="sum(assigned units × travel seconds) + unmet units × penalty seconds" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5F8FB;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="445" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="The penalty gives a cost to leaving demand uncovered. For example, with two areas demanding one ambulance each and one ambulance available, the baseline sends it to the Critical area even if it is farther away. If both routes cost less than the penalty, the optimizer may serve the closer area because the same number of units remains unmet either way. The SRS objective leaves unmet demand unweighted, so the implementation applies one penalty to all severity levels. A policy change to severity-weighted unmet demand belongs in the cost of the direct source-to-area arcs." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="505" width="1480" height="119" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="6fd977d23efa" name="Metrics">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Metrics" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 10" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Metric" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Calculation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="118" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Average response time" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="166" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Total unit-minutes divided by number of assigned ambulances" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="166" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Maximum response time" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="214" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Longest travel time among the assignments that send units" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="214" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Demand coverage" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="262" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Number of assigned units divided by total demand" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="262" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Unmet demand" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="310" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Total demand minus assigned units" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="310" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Resource utilization" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="358" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Number of assigned units divided by total stock" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="358" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Total travel cost" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="406" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Sum of travel minutes times assigned units, reported in unit-minutes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="406" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="Allocation runtime" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="454" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Elapsed milliseconds to build and solve the method. Routing and database work are excluded." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="454" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="The implementation uses zero for an empty denominator or an empty maximum. Response time only describes served demand, so read it alongside coverage and unmet demand." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="518" width="1480" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="25760a7b5fc8" name="Sample evaluation">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Sample evaluation" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 11" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="The first local run with the default OSRM setting returned road estimates for all 12 pairs in each scenario. These results are from the saved sample runs on November 11, 2026. Travel times can change when the routing server updates its map data." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Scenario" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="203" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Baseline coverage" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="203" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Baseline travel cost" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="800" y="203" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Optimized travel cost" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="203" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Coastal Cyclone" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="251" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="91.7%" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="251" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="260.82 unit-minutes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="800" y="251" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="186.28 unit-minutes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="251" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Musi River Flooding" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="299" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="92.3%" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="299" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="170.40 unit-minutes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="800" y="299" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="131.40 unit-minutes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="299" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Urban Earthquake" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="347" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="92.3%" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="347" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="189.05 unit-minutes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="800" y="347" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="178.12 unit-minutes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="347" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="These numbers compare total travel. For a demonstration, open the two assignment maps and check which areas receive the available stock. The severity-first baseline and the optimizer can leave different areas underserved." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="411" width="1480" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="An isolated Compose run also verified the fallback on all three scenarios, including the pair count, stock and demand constraints, and shared travel estimates. A separate scenario confirmed input validation, an empty allocation for zero demand, and access to the old run after its area was removed. The saved results were still present after restarting PostgreSQL and FastAPI." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="497" width="1480" height="95" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="38b58db18cdb" name="Making changes later">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Making changes later" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Backend and database walkthrough  |  Page 12" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="- To change accepted inputs, update the Pydantic model, the frontend form, and any related SQL check. Add a new numbered SQL migration for a schema change so it also reaches existing databases." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="- To change default sample values, edit samples.json and use Restore built-in samples. It replaces their current inputs and increments their revision." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="200" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="- To change the fallback speed or optimizer penalty, set FALLBACK_SPEED_KMH or UNMET_PENALTY_SECONDS before starting Compose. See the settings and restart commands (DRRAS_docker.drawio). Existing matrices retain their saved times. Optimized runs record the penalty they used." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="261" width="1480" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="- To change the algorithms, work in allocation.py. Afterward, run both methods on all three samples. Check that each matrix has one row per pair, every assignment stays within stock and demand, and comparison reads two runs for the same revision." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="343" width="1480" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="- To inspect the schema or saved runs directly, use the commands in the Docker guide (DRRAS_docker.drawio)." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="425" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="The original requirements live in the SRS (../Document/DRRAS_SRS.pdf). The change log (DRRAS_changes.drawio) records what was implemented and checked." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="486" width="1480" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

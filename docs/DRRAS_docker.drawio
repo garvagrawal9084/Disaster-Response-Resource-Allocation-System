@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="DRRAS documentation" version="24.7.17" type="device" pages="4">
+  <diagram id="367cf2846423" name="Overview">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Overview" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Docker and local development  |  Page 1" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="docker compose up --build --wait -d&#10;docker compose ps&#10;docker compose logs backend&#10;docker compose down" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5F8FB;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="113" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Compose starts PostgreSQL/PostGIS, then the FastAPI API, then the React dashboard served by Nginx. Startup waits for PostgreSQL to accept connections and for the API to run its migrations and health check. The database uses a named volume called database-data within the Compose project. docker compose down keeps that volume. Compose uses the official PostGIS x86-64 image, so Apple Silicon runs the database with Docker Desktop emulation. PostGIS image documentation (https://github.com/postgis/docker-postgis)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="245" width="1480" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="354" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Address" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="354" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Dashboard and proxied API" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="402" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&amp;lt;http://localhost:8080&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="402" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Direct API" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="450" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&amp;lt;http://localhost:8000/api/health&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="450" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Interactive API docs" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="498" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&amp;lt;http://localhost:8080/api/docs&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="498" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="PostgreSQL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="546" width="400" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="database:5432 on the internal Compose network" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="460" y="546" width="1080" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Nginx sends /api/ to the backend. Other paths serve the static frontend with SPA fallback. The API and frontend ports are bound to loopback. The supplied credentials are for this local demo." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="610" width="1480" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Set an environment variable on the Compose command to change a default:" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="695" width="1480" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="Setting" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="757" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Default" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="757" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="Effect" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="757" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="FRONTEND_PORT" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="805" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="8080" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="805" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="Dashboard port on the host" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="805" width="630" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="79d2dc23b2a5" name="Overview cont">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Overview (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Docker and local development  |  Page 2" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Setting" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Default" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="118" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Effect" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="118" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="API_PORT" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="166" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="8000" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="166" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Direct API port on the host" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="166" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="OSRM_URL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="214" width="230" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="https://router.project-osrm.org" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="214" width="620" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Base URL of the OSRM server. Set it to an empty string to use the fallback for new matrices." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="214" width="630" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="FALLBACK_SPEED_KMH" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="270" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="30" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="270" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Speed used to convert great-circle distance to time. Allowed range is 1–200." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="270" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="UNMET_PENALTY_SECONDS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="318" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="7200" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="318" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="Optimizer cost for each unmet unit. Allowed range is 1–100,000,000." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="318" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="For example, OSRM_URL=&amp;#x27;&amp;#x27; docker compose up --build --wait -d starts the stack with straight-line routing for new matrices. Existing scenario revisions reuse their stored matrices." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="382" width="1480" height="71" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="2da341991322" name="Frontend hot reload">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Frontend hot reload" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Docker and local development  |  Page 3" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Start the database and API first, then run the Vite development server:" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="docker compose up --build --wait -d backend&#10;cd frontend&#10;npm ci&#10;npm run dev" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5F8FB;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="1480" height="113" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Open the URL printed by Vite. It proxies /api to port 8000. If you changed the API port, start Vite with a matching target, for example DRRAS_API_TARGET=http://127.0.0.1:9000 npm run dev." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="306" width="1480" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="For Python-only development outside Compose, install backend/requirements.txt in a Python 3.13 virtual environment, set DATABASE_URL to a PostgreSQL database with PostGIS installed, and run uvicorn app.main:app --reload from backend/. The database role needs permission to create the schema and enable PostGIS if the extension is absent." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="392" width="1480" height="71" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="31dd8c7bf973" name="Inspect and back up the database">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Inspect and back up the database" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Docker and local development  |  Page 4" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="docker compose exec database psql -U drras -d drras" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5F8FB;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="In psql, run \dt to list tables and \d travel_matrix to inspect one. Try:" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="178" width="1480" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="SELECT postgis_version();&#10;SELECT name, region, revision FROM scenarios;&#10;SELECT scenario_id, revision, method, runtime_ms FROM runs ORDER BY created_at DESC;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5F8FB;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="240" width="1480" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="To export a backup, run docker compose exec -T database pg_dump -U drras -d drras &amp;gt; drras-backup.sql from the repository root. Save that file somewhere you can find later." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="344" width="1480" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
