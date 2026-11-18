@@ -279,7 +279,6 @@ export default function App() {
         </nav>
         <div className="sidebar-bottom">
           <div className="sidebar-note"><span className="sidebar-note-icon"><CircleAlert size={16} /></span><strong>Planning prototype</strong><p>All data and allocations shown here are simulated. Human review is required.</p></div>
-          <div className="sidebar-foot"><span className="live-dot" /> Demo workspace <span>v0.1</span></div>
         </div>
       </aside>
 
@@ -289,11 +288,11 @@ export default function App() {
         <header className="topbar">
           <button className="icon-button menu-button" onClick={() => setMobileMenu(true)} aria-label="Open menu"><Menu size={22} /></button>
           <div className="topbar-path"><span>Workspace</span><span className="path-separator">/</span><strong>{page?.label}</strong></div>
-          <div className="topbar-right"><span className="topbar-status"><span className="live-dot" /> Demo mode</span><span className="avatar">CO</span></div>
+          <span className="avatar">CO</span>
         </header>
 
         <div className="page-content">
-          {error && <div className="demo-banner" role="alert"><CircleAlert size={18} /><span>{error}</span><button className="text-button" onClick={() => setError('')}>Dismiss</button></div>}
+          {error && <div className="notice-banner" role="alert"><CircleAlert size={18} /><span>{error}</span><button className="text-button" onClick={() => setError('')}>Dismiss</button></div>}
           {pending && <p role="status">Working…</p>}
           {notice && <div className="toast" role="status"><Check size={17} /><span>{notice}</span><button onClick={() => setNotice('')} aria-label="Dismiss message"><X size={15} /></button></div>}
 
@@ -308,7 +307,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="demo-banner"><CircleAlert size={18} /><span><strong>Simulated scenario.</strong> Review suggested assignments before drawing conclusions about an allocation.</span></div>
+          <div className="notice-banner"><CircleAlert size={18} /><span><strong>Simulated scenario.</strong> Review suggested assignments before drawing conclusions about an allocation.</span></div>
 
           {view === 'overview' && (
             <>
