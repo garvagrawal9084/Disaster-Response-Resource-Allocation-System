@@ -34,8 +34,8 @@ const assert = require("node:assert/strict");
   }
 
   await test("BB-20", "Map before allocation and tile failure", "FR-2.1–FR-2.3 / frontend guide",
-    "In Chrome, block external map-tile requests, open the dashboard, and choose Musi River Flooding. On Overview, inspect the map and affected-area list before either run.",
-    "Four differently colored area markers and three base markers render before allocation. A clear tile-unavailable message appears and area information remains readable.", async () => {
+    "In Chrome, block external map-tile requests, open the dashboard, and choose Musi River Flooding. On Overview, inspect the map and fallback lists before either run.",
+    "Four differently colored area markers and three base markers render before allocation. The fallback lists all affected areas and resource bases by name.", async () => {
     const response = await page.goto(root);
     assert.equal(response.status(),200);
     await page.getByRole("combobox", {name:"Select scenario"}).selectOption(sample);
@@ -43,13 +43,17 @@ const assert = require("node:assert/strict");
     await map.waitFor();
     const warning = "Map tiles unavailable. Area and base locations remain listed alongside the map.";
     await text(warning);
-    for (const name of ["Afzal Gunj","Chaderghat","Amberpet","Attapur"]) await text(name);
+    const scenario = await (await page.request.get(root+"/api/scenarios/"+sample)).json();
+    const fallback = page.getByRole("region",{name:"Map location list"});
+    for (const {name} of [...scenario.areas, ...scenario.bases]) {
+      await fallback.getByText(name,{exact:true}).waitFor({state:"visible"});
+    }
     const colors = await map.locator("path[fill-opacity='1']").evaluateAll(nodes => nodes.map(n=>n.getAttribute("fill")));
     const bases = await map.locator(".leaflet-marker-icon").count();
     assert.deepEqual([colors.length,new Set(colors).size,bases],[4,4,3]);
     const current = await (await page.request.get(root+"/api/scenarios/"+sample+"/runs")).json();
     assert.deepEqual(current.runs,{});
-    return "Four area markers used four distinct fills and three base markers appeared before any run. The tile warning and all four area names were visible.";
+    return "Four area markers used four distinct fills and three base markers appeared before any run. The tile fallback listed all four areas and three bases.";
   });
 
   await test("BB-21","Comparison with missing runs","FR-6.5",
@@ -66,8 +70,8 @@ const assert = require("node:assert/strict");
   });
 
   await test("BB-22","Completed comparison and page refresh","FR-6.2–FR-6.4 / FR-7.1",
-    "Run Optimized for the Musi sample. Open Compare results, inspect the maps and metrics, and reload. Reopen Compare results if needed.",
-    "Two allocation maps, six metrics and runtime appear. The Difference and Better when columns are shown, along with a fallback note. Both results are still available after reload.", async () => {
+    "Compare both runs for Musi, refresh, then compare a scenario where the optimizer dispatches zero ambulances.",
+    "Both Musi results stay available after reload. A zero-dispatch run shows N/A for average and maximum response time and has no improvement indicator for either metric.", async () => {
     await nav("Allocations");
     await page.getByRole("button",{name:"Run optimized",exact:true}).click();
     await text("Optimized run saved. The matrix includes straight-line estimates.");
@@ -85,7 +89,44 @@ const assert = require("node:assert/strict");
     await page.getByRole("combobox",{name:"Select scenario"}).selectOption(sample);
     await nav("Compare results");
     await text("Both runs saved");
-    return `Two maps and seven rows appeared, including runtime. ${cost[0]} showed ${cost[1]} baseline, ${cost[2]} optimized, difference ${cost[3]}, and “${cost[4]}”. The fallback note was visible and both runs reappeared after refresh.`;
+
+    const created = await page.request.post(root+"/api/scenarios", {
+      data: {name:"Regional distance check", region:"Simulated"},
+    });
+    assert.equal(created.status(),201);
+    const {id} = await created.json();
+    const endpoint = root+"/api/scenarios/"+id;
+    const area = await page.request.post(endpoint+"/areas", {
+      data: {name:"Affected area", location:{lat:28.6139,lng:77.209}, population:10, severity:"High", demand:1},
+    });
+    const base = await page.request.post(endpoint+"/bases", {
+      data: {name:"Distant base", location:{lat:17.385,lng:78.4867}, quantity:1},
+    });
+    assert.deepEqual([area.status(),base.status()],[201,201]);
+    const baseline = await page.request.post(endpoint+"/runs/baseline");
+    const optimized = await page.request.post(endpoint+"/runs/optimized");
+    assert.deepEqual([baseline.status(),optimized.status()],[201,201]);
+    assert.equal((await baseline.json()).assignments.length,1);
+    assert.equal((await optimized.json()).assignments.length,0);
+
+    await page.reload();
+    await page.getByRole("combobox",{name:"Select scenario"}).selectOption(id);
+    await nav("Compare results");
+    await text("Both runs saved");
+    for (const label of ["Avg. response time","Max. response time"]) {
+      const row = table.getByRole("row").filter({has:page.getByRole("cell",{name:label,exact:true})});
+      const [, before, after, difference] = await row.getByRole("cell").allTextContents();
+      assert.match(before,/ min$/);
+      assert.deepEqual([after,difference],["N/A","N/A"]);
+      assert.equal(await row.locator(".delta").count(),0);
+    }
+    await nav("Allocations");
+    await page.getByRole("tab",{name:/^Optimized/}).click();
+    const responseValues = page.locator(".metric-line").filter({hasText:/response time/}).locator("strong");
+    assert.deepEqual(await responseValues.allTextContents(),["N/A","N/A"]);
+    await page.getByRole("combobox",{name:"Select scenario"}).selectOption(sample);
+
+    return `Musi’s ${cost[0]} showed ${cost[1]} baseline and ${cost[2]} optimized. Both runs reappeared after refresh. The zero-dispatch run showed N/A for both response times and differences, without colored indicators.`;
   });
 
   await test("BB-23","Travel matrix filters","FR-3.2 / FR-3.5 / frontend guide",

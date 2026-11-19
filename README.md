@@ -26,6 +26,6 @@ Stop the stack with `docker compose down`. The named database volume keeps scena
 - [Frontend behavior](docs/frontend.md) describes the dashboard and its API integration.
 - [Docker and local development](docs/docker.md) covers ports, settings, startup, and logs.
 - [Change log](docs/changes.md) records the implementation and its verification.
-- [Original requirements](Document/DRRAS_SRS.pdf) describe the intended coursework scope.
+- [Original requirements](<Document/06 - DRRAS_SRS.pdf>) describe the intended coursework scope.
 
 Run `npm ci` and `npm run build` in `frontend/` to check the frontend. To work with hot reload while using the Compose backend, follow the [local development steps](docs/docker.md#frontend-hot-reload).

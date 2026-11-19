@@ -32,3 +32,7 @@ Keep a short entry here when a meaningful part of the application is added or ch
 ## 2026-11-17 — Black box test suite
 
 - Added reproducible browser and HTTP checks covering scenario data, input validation, routing fallback, allocation comparisons, history, and persistence. See the [black box test instructions](docker.md#run-the-black-box-tests).
+
+## 2026-11-18 — Dashboard fallbacks
+
+- Added area and base lists when map tiles fail. Runs with no assignments now show N/A for response times and their comparison differences. See [frontend behavior](frontend.md).

@@ -143,4 +143,4 @@ An isolated Compose run also verified the fallback on all three scenarios, inclu
 - To change the algorithms, work in `allocation.py`. Afterward, run both methods on all three samples. Check that each matrix has one row per pair, every assignment stays within stock and demand, and comparison reads two runs for the same revision.
 - To inspect the schema or saved runs directly, use the commands in the [Docker guide](docker.md).
 
-The original requirements live in the [SRS](../Document/DRRAS_SRS.pdf). The [change log](changes.md) records what was implemented and checked.
+The original requirements live in the [SRS](<../Document/06 - DRRAS_SRS.pdf>). The [change log](changes.md) records what was implemented and checked.

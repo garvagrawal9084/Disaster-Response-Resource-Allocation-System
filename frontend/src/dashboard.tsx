@@ -15,7 +15,13 @@ export function formatNumber(value: number, digits = 0) {
   return new Intl.NumberFormat('en-IN', { maximumFractionDigits: digits, minimumFractionDigits: digits }).format(value)
 }
 
-export function metricValue(value: number, unit: string) {
+export function runMetric(run: AllocationRun, key: keyof AllocationRun['metrics']) {
+  if (!run.assignments.length && (key === 'averageResponseTime' || key === 'maxResponseTime')) return null
+  return run.metrics[key]
+}
+
+export function metricValue(value: number | null, unit: string) {
+  if (value === null) return 'N/A'
   if (unit === '%') return `${formatNumber(value * 100, 1)}%`
   return `${formatNumber(value, unit === 'min' ? 1 : 0)} ${unit}`
 }

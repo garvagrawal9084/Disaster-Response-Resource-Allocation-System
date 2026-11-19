@@ -8,4 +8,4 @@ The browser dashboard uses React and Leaflet. It sends JSON over HTTP to FastAPI
 
 The three stores share one database. Scenario revisions keep changed inputs and older results distinguishable. The PostGIS points are the persisted coordinates. The Leaflet assignment links visualize endpoints, and the matrix stores travel durations and distances.
 
-See the [backend walkthrough](backend.md) for table relationships, transaction boundaries, and implementation details. The [SRS](../Document/DRRAS_SRS.pdf) defines the coursework requirements.
+See the [backend walkthrough](backend.md) for table relationships, transaction boundaries, and implementation details. The [SRS](<../Document/06 - DRRAS_SRS.pdf>) defines the coursework requirements.

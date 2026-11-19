@@ -3,11 +3,13 @@
 The React and TypeScript app runs in the browser. `main.tsx` mounts `App.tsx`, which owns navigation, forms, the selected scenario, and current run results. `ScenarioMap.tsx` owns Leaflet and `api.ts` sends requests to FastAPI through the same origin. The database is the source of truth for scenarios and runs.
 
 - **Overview** shows demand, supply, current baseline coverage, and the selected scenario's map.
-- **Scenario data** creates scenarios and adds or removes areas and bases. The map uses severity colors for areas and a separate marker for each base. A list remains usable if OpenStreetMap tiles fail to load.
+- **Scenario data** creates scenarios and adds or removes areas and bases. The map uses severity colors for areas and a separate marker for each base.
 - **Travel matrix** lists the saved travel times and distances for the selected scenario revision. Filter by affected area and estimate source to distinguish OSRM road estimates from straight-line fallback estimates. Run either allocation method first to generate the matrix.
 - **Allocations** runs either method and shows the saved assignments, travel estimates, metrics, and runtime. The area coverage table shows how many ambulances each area needed and received, including areas that received zero.
 - **Compare results** shows the latest baseline and optimized runs for the scenario's current revision. The difference is optimized minus baseline. The map's dashed lines connect assigned bases and areas.
 - **Run history** lists saved runs across scenario revisions, newest first. Open a run to see its original map, assignments, area coverage, and metrics.
+
+When OpenStreetMap tiles fail, a list below the affected map shows all areas and bases with their demand or stock. If a run assigns zero ambulances, the dashboard shows N/A for its average and maximum response times and for their differences in the comparison.
 
 After an input changes, the API returns the new revision. The frontend loads runs for that revision, keeping older results out of the current comparison. Run history retrieves each run with the scenario snapshot saved when the run completed, so locations removed later still appear in the original plan. Loading and request errors appear in the dashboard.
 
