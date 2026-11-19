@@ -1,0 +1,1218 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="DRRAS documentation" version="24.7.17" type="device" pages="18">
+  <diagram id="36e5fc508ad3" name="Overview">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Overview" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 1" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Project: Disaster Response Resource Allocation System (DRRAS)   Design baseline: Repository commit 8591467, reviewed 17 November 2026   Scope: Implemented browser-based planning prototype for simulated ambulance allocation." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="71" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="099f4d555c30" name="1 Purpose and design basis">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="1 Purpose and design basis" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 2" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="This document describes the implemented layered architecture and two representative use-case interactions: adding an affected area and running an allocation. Each interaction has a time-ordered sequence diagram and an equivalent object-link collaboration diagram. The coordinator reviews proposed assignments; the system does not dispatch vehicles." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="The design follows the project SRS (../Document/DRRAS_SRS.pdf), use-case report (../Document/Disaster_Response_Use_Case_Report%20Final.pdf), and DFD (../Document/Data%20Flow%20Diagram.pdf). The DFD names D1 Scenario Data, D2 Travel-Time Matrix, and D3 Allocation Results. The prescribed textbook is *Software Engineering* by Prof. Salman Abdul Moiz (AICTE, 2024), Unit 3. Section 3.4.2 and Figure 3.6 (printed p. 78, PDF p. 102) describe horizontal layers and their services. Section 3.6.1 and Figures 3.12-3.13 (printed pp. 84-85, PDF pp. 108-109) define sequence diagrams as message order over time and collaboration diagrams as direct object links with messages. These figures are guidance for notation; the diagrams below model DRRAS itself." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="203" width="1480" height="142" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="4afaae96cf07" name="2 Layered architecture">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="2 Layered architecture" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 3" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Figure 1. Implemented four-layer view. The vertical arrows show service requests from a higher layer to a lower one; responses travel back upward. OSRM and OpenStreetMap are external services, not database tables." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="71" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="23b7cc1fa28f" name="Figure 1 Layered Architecture">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Figure 1 | Four-layer architecture" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 4" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Coordinator" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#DDF2F0;strokeColor=#1E827F;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="540" y="98" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="1 USER INTERFACE&#10;React · TypeScript · Leaflet · dashboard and maps" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=19;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="290" y="150" width="930" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="2 INTERFACE MANAGER&#10;Nginx/Vite proxy · FastAPI routes · Pydantic validation" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=19;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="290" y="310" width="930" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="3 BUSINESS LOGIC&#10;Scenario orchestration · routing · baseline · OR-Tools · metrics" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=19;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="290" y="470" width="930" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="4 SYSTEM SUPPORT AND DATA&#10;repository.py · PostgreSQL/PostGIS · D1 scenario · D2 matrix · D3 results" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=19;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="290" y="630" width="930" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="755" y="144" as="sourcePoint" />
+            <mxPoint x="755" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="755" y="270" as="sourcePoint" />
+            <mxPoint x="755" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="755" y="430" as="sourcePoint" />
+            <mxPoint x="755" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="755" y="590" as="sourcePoint" />
+            <mxPoint x="755" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" value="OpenStreetMap tiles&#10;external map background" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFF7E7;strokeColor=#D39838;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="185" width="270" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="OSRM Table service&#10;external road estimates" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFF7E7;strokeColor=#D39838;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="490" width="270" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1220" y="212" as="sourcePoint" />
+            <mxPoint x="1260" y="212" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1220" y="515" as="sourcePoint" />
+            <mxPoint x="1260" y="515" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" value="Service requests flow downward; responses return upward. The layers are logical responsibilities, not separate deployments." style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="790" width="1000" height="54" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="a26120c14a93" name="2 Layered architecture cont">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="2 Layered architecture (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 5" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Layer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Main responsibility" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="118" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Implemented elements" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="800" y="118" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Interface to next layer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="118" width="370" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="1 User interface" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="166" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Collect input and show maps, plans, metrics, and history." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="166" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="frontend/src/App.tsx, api.ts, ScenarioMap.tsx, run and matrix components." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="800" y="166" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="JSON requests to /api through a proxy." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="166" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="2 Interface manager" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="222" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Expose the HTTP boundary and reject malformed input." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="222" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Nginx/Vite proxy; FastAPI routes and Pydantic models in main.py and models.py." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="800" y="222" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Validated calls to application functions and repository operations." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="222" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="3 Business logic" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="278" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Build a travel matrix, produce and check plans, and calculate metrics." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="278" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="routing.py, allocation.py, and run_allocation() orchestration in main.py." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="800" y="278" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Parameterized repository calls; OSRM Table request when needed." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="278" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="4 System support and data" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="334" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="Persist scenario inputs, matrices, runs, and spatial coordinates." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="430" y="334" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="repository.py, SQL migration, PostgreSQL/PostGIS." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="800" y="334" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="D1, D2, and D3 records." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="334" width="370" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="The layers are a logical responsibility view, not four separately deployed programs. main.py spans the API and application boundary because its endpoint functions coordinate business operations and transactions. repository.py contains persistence access; the React client does not connect directly to PostgreSQL. The textbook&amp;#x27;s generic interface-manager layer mentions authentication, but this coursework prototype has no login or authorization feature, so none is shown as implemented." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="406" width="1480" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="Docker Compose deploys the frontend, backend, and database services. Nginx serves built frontend assets and proxies /api to FastAPI. The backend requests road travel times from external OSRM; routing.py marks straight-line estimates when road data is unavailable. Leaflet requests map tiles from OpenStreetMap. The OSRM result is persisted in D2 per scenario revision so baseline and optimized runs use the same matrix." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="515" width="1480" height="95" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="9ea3474f78a3" name="3 Diagram notation and shared rules">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="3 Diagram notation and shared rules" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 6" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Object labels beginning with a colon denote runtime participants or component instances, following the textbook&amp;#x27;s object notation. In the sequence diagrams, participants run left to right and time moves downward. Solid arrows are calls; dashed arrows are returns. alt and opt frames show conditional behavior. In the collaboration diagrams, boxes are the same participants connected by direct links; numbers on links correspond to the message lists below each figure. The collaboration diagrams show the successful path and note important alternatives separately. No object creation or destruction message is needed for these two flows." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="All scenario writes use the current scenario revision. Adding an area increments that revision. An allocation uses one D2 matrix for its revision, saves a D3 run, and leaves D1 stock unchanged because a run is a proposal. The comparison view only places baseline and optimized results beside each other when their revision matches the current scenario." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="251" width="1480" height="95" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="b117ca91e0c5" name="4 Interaction A Add an affected area">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="4 Interaction A Add an affected area" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 7" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Precondition: The coordinator selected an existing scenario. Postcondition: The new area is stored in D1 and the scenario revision is incremented. Previously saved runs remain historical but are not current comparison results." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Figure 2. Sequence diagram for adding an area. The successful path is shown; invalid input returns a validation error before a database write." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="203" width="1480" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="c577d852a9bb" name="Figure 2 | Add area: sequence">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Figure 2 | Add area: sequence" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 8" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Coordinator" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="41" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="173" as="sourcePoint" />
+            <mxPoint x="135" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8" value=":Dashboard" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="309" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="403" y="173" as="sourcePoint" />
+            <mxPoint x="403" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" value=":APIClient" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="577" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="671" y="173" as="sourcePoint" />
+            <mxPoint x="671" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" value=":FastAPI" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="845" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="939" y="173" as="sourcePoint" />
+            <mxPoint x="939" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value=":Repository" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1113" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1207" y="173" as="sourcePoint" />
+            <mxPoint x="1207" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" value=":PostgreSQL" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1381" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1475" y="173" as="sourcePoint" />
+            <mxPoint x="1475" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="205" as="sourcePoint" />
+            <mxPoint x="403" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" value="1 submit area form" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="141" y="175" width="256" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="2 check values" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E7F4F2;strokeColor=#1E827F;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=12;fontStyle=0;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="311" y="227" width="184" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="403" y="302" as="sourcePoint" />
+            <mxPoint x="671" y="302" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" value="3 addArea()" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="409" y="272" width="256" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="671" y="351" as="sourcePoint" />
+            <mxPoint x="939" y="351" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="24" value="4 POST /areas" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="677" y="321" width="256" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="5 validate NewArea" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E7F4F2;strokeColor=#1E827F;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=12;fontStyle=0;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="847" y="372" width="184" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="939" y="450" as="sourcePoint" />
+            <mxPoint x="1207" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="27" value="6 require_scenario(write)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="945" y="420" width="256" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1207" y="500" as="sourcePoint" />
+            <mxPoint x="1475" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="29" value="6.1 SELECT FOR UPDATE" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1213" y="470" width="256" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="939" y="550" as="sourcePoint" />
+            <mxPoint x="1207" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" value="7 add_area(); bump_revision()" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="945" y="520" width="256" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1207" y="600" as="sourcePoint" />
+            <mxPoint x="1475" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="33" value="7.1 INSERT; UPDATE" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1213" y="570" width="256" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="939" y="650" as="sourcePoint" />
+            <mxPoint x="1207" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="35" value="8 get_scenario()" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="945" y="620" width="256" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1207" y="700" as="sourcePoint" />
+            <mxPoint x="1475" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37" value="8.1 SELECT current D1" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1213" y="670" width="256" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="9-10 Return HTTP 201 with updated scenario; dashboard shows the new revision. Invalid input returns HTTP 422 before any database write." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E7F4F2;strokeColor=#1E827F;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="795" width="1480" height="73" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5fb607b77f4d" name="4 Interaction A Add an affected area cont">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="4 Interaction A Add an affected area (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 9" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Figure 3. Collaboration diagram for the successful add-area path. The same participants exchange the numbered messages over direct links. Database operations are grouped because the repository owns SQL access." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="71" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="e5fe46b23ddc" name="Figure 3 Add Area Collaboration">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Figure 3 | Add area: collaboration" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 10" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Coordinator" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="75" y="290" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value=":Dashboard" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="315" y="290" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value=":APIClient" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="555" y="290" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value=":FastAPI" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="795" y="290" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value=":Repository" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="290" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value=":PostgreSQL" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1275" y="290" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="255" y="335" as="sourcePoint" />
+            <mxPoint x="315" y="335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="1, 10" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="302" width="90" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="495" y="335" as="sourcePoint" />
+            <mxPoint x="555" y="335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" value="3, 9" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="302" width="90" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="735" y="335" as="sourcePoint" />
+            <mxPoint x="795" y="335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" value="4, 9" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="302" width="90" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="975" y="335" as="sourcePoint" />
+            <mxPoint x="1035" y="335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" value="6, 7, 8" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="960" y="302" width="90" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1215" y="335" as="sourcePoint" />
+            <mxPoint x="1275" y="335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="21" value="6.1, 7.1, 8.1" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="302" width="90" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="2 local check" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#DDF2F0;strokeColor=#1E827F;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=14;fontStyle=0;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="455" width="160" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="5 model check" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#DDF2F0;strokeColor=#1E827F;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=14;fontStyle=0;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="805" y="455" width="160" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#1E827F;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="405" y="380" as="sourcePoint" />
+            <mxPoint x="405" y="455" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#1E827F;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="885" y="380" as="sourcePoint" />
+            <mxPoint x="885" y="455" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="26" value="Numbered links show the same successful path as Figure 2. The dashboard sends JSON through the API client. FastAPI calls the repository; only the repository sends SQL to PostgreSQL. A validation failure ends before messages 6-8." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5F8FB;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=17;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="115" y="650" width="1370" height="140" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="1b82142b62fc" name="4 Interaction A Add an affected area cont">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="4 Interaction A Add an affected area (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 11" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Message" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Sender to receiver" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="118" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Meaning and code mapping" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="118" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="1-3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="166" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Coordinator → Dashboard → APIClient" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="166" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Submit the area; App.addArea() checks input and calls api.addArea()." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="166" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="4-5" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="214" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="APIClient → FastAPI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="214" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="POST JSON; NewArea validates fields before the endpoint writes." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="214" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="6 and 6.1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="262" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="FastAPI → Repository → PostgreSQL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="262" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="require_scenario(..., write=True) reads and locks the scenario." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="262" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="7 and 7.1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="310" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="FastAPI → Repository → PostgreSQL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="310" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="add_area() inserts D1 area data; bump_revision() changes the revision." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="310" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="8 and 8.1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="358" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="FastAPI → Repository → PostgreSQL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="358" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="get_scenario() reads the updated state." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="358" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="9-10" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="406" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="FastAPI → APIClient → Dashboard → Coordinator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="406" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="Return HTTP 201 and updated JSON; replace the scenario shown in the UI." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="406" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="The frontend checks input for immediate feedback, while Pydantic and database constraints remain authoritative. A validation failure follows the alt branch in Figure 2 and leaves the scenario unchanged. The new revision prevents an old allocation from being treated as a current result." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="470" width="1480" height="71" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5c26d986dcd1" name="5 Interaction B Run baseline or optimized ">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="5 Interaction B Run baseline or optimized allocation" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 12" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Precondition: The scenario has at least one active area and one active base. Postcondition: A complete D2 matrix exists for the revision, and a new D3 run with assignments, metrics, runtime, method, and input snapshot is stored. D1 stock is unchanged." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Figure 4. Sequence diagram for an allocation run. The method path selects either baseline() or optimized(). The matrix is built only if none is saved for this revision." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="203" width="1480" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="e3bf991c0e8a" name="Figure 4 | Run allocation: sequence">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Figure 4 | Run allocation: sequence" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 13" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Coordinator" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="41" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="173" as="sourcePoint" />
+            <mxPoint x="135" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8" value=":Dashboard" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="232" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="326" y="173" as="sourcePoint" />
+            <mxPoint x="326" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" value=":APIClient" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="424" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="518" y="173" as="sourcePoint" />
+            <mxPoint x="518" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" value=":FastAPI" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="615" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="709" y="173" as="sourcePoint" />
+            <mxPoint x="709" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value=":Repository" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="807" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="901" y="173" as="sourcePoint" />
+            <mxPoint x="901" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" value=":Routing" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="998" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1092" y="173" as="sourcePoint" />
+            <mxPoint x="1092" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" value=":OSRM" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1284" y="173" as="sourcePoint" />
+            <mxPoint x="1284" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="20" value=":Allocator" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#173B60;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1381" y="115" width="188" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#9AB0C4;strokeWidth=1;endArrow=none;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1475" y="173" as="sourcePoint" />
+            <mxPoint x="1475" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="200" as="sourcePoint" />
+            <mxPoint x="326" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="23" value="1 choose method" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="141" y="170" width="179" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="326" y="248" as="sourcePoint" />
+            <mxPoint x="518" y="248" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" value="2 run()" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="332" y="218" width="179" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="518" y="296" as="sourcePoint" />
+            <mxPoint x="709" y="296" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="27" value="3 POST /runs/{method}" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="524" y="266" width="179" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="709" y="344" as="sourcePoint" />
+            <mxPoint x="901" y="344" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="29" value="4 load D1 + D2" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="715" y="314" width="179" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="709" y="410" as="sourcePoint" />
+            <mxPoint x="1092" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" value="5 build_matrix() if absent" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="715" y="380" width="371" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1092" y="458" as="sourcePoint" />
+            <mxPoint x="1284" y="458" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="33" value="5.1 OSRM Table" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1098" y="428" width="179" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="5.2 fallback pairs" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E7F4F2;strokeColor=#1E827F;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=12;fontStyle=0;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="481" width="184" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="709" y="560" as="sourcePoint" />
+            <mxPoint x="901" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="36" value="6 save D2 matrix" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="715" y="530" width="179" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="709" y="608" as="sourcePoint" />
+            <mxPoint x="1475" y="608" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="38" value="7 baseline / optimized" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="715" y="578" width="754" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="709" y="656" as="sourcePoint" />
+            <mxPoint x="1475" y="656" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="40" value="8 validate + metrics" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="715" y="626" width="754" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="709" y="704" as="sourcePoint" />
+            <mxPoint x="901" y="704" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="42" value="9 save D3 run" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#172B42;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="715" y="674" width="179" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="10-11 Return saved run; display assignments, metrics and fallback notice. Steps 5-6 are optional when a complete matrix already exists. D1 stock is unchanged." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#E7F4F2;strokeColor=#1E827F;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="797" width="1480" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5f5f09deec8b" name="5 Interaction B Run baseline or optimized  cont">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="5 Interaction B Run baseline or optimized allocation (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 14" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Figure 5. Collaboration diagram for the allocation path. The arrows are direct participant links. The ordered message list makes the run and optional routing branch explicit." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="284c646d2c1b" name="Figure 5 Allocation Collaboration">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Figure 5 | Run allocation: collaboration" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 15" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Coordinator" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="180" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value=":Dashboard" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="305" y="180" width="180" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value=":APIClient" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="550" y="180" width="180" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value=":FastAPI" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="795" y="180" width="180" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value=":Repository" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="180" width="180" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value=":Routing" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="795" y="420" width="180" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value=":OSRM" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="420" width="180" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value=":Allocator" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#266FA0;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="550" y="420" width="180" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="224" as="sourcePoint" />
+            <mxPoint x="305" y="224" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" value="1, 11" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="218" y="193" width="110" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="485" y="224" as="sourcePoint" />
+            <mxPoint x="550" y="224" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" value="2, 10" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="462" y="193" width="110" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="224" as="sourcePoint" />
+            <mxPoint x="795" y="224" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" value="3, 10" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="708" y="193" width="110" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="975" y="224" as="sourcePoint" />
+            <mxPoint x="1040" y="224" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="21" value="4, 6, 9" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="952" y="193" width="110" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="885" y="268" as="sourcePoint" />
+            <mxPoint x="885" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="23" value="5" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="830" y="313" width="110" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="975" y="464" as="sourcePoint" />
+            <mxPoint x="1040" y="464" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" value="5.1" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="952" y="433" width="110" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#266FA0;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="885" y="268" as="sourcePoint" />
+            <mxPoint x="640" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="27" value="7, 8" style="text;html=1;whiteSpace=wrap;overflow=visible;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#1E827F;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="708" y="313" width="110" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="5.2 marked fallback" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#DDF2F0;strokeColor=#1E827F;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=14;fontStyle=0;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1045" y="535" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="" style="edgeStyle=none;html=1;rounded=0;strokeColor=#1E827F;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="885" y="508" as="sourcePoint" />
+            <mxPoint x="1045" y="565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="30" value="Message order matches Figure 4. Repository calls reach D1, D2 and D3 in PostgreSQL. Routing calls OSRM only when the current revision lacks a saved matrix. The plan is a proposal and never subtracts D1 stock." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5F8FB;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=17;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="685" width="1400" height="117" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="14325e136cee" name="5 Interaction B Run baseline or optimized  cont">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="5 Interaction B Run baseline or optimized allocation (continued)" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 16" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Message" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Sender to receiver" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="118" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Meaning and code mapping" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="118" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="1-3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="166" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Coordinator → Dashboard → APIClient → FastAPI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="166" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="App.runAllocation() calls api.run() and POSTs the selected method." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="166" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="4" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="214" width="230" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="FastAPI ↔ Repository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="214" width="620" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="run_allocation() locks and reads D1; load_matrix() reads D2 for the current revision through PostgreSQL." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="214" width="630" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="5, 5.1, 5.2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="270" width="230" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="FastAPI ↔ Routing ↔ OSRM" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="270" width="620" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="On the first run of a revision, build_matrix() requests road pairs and uses marked fallback estimates where needed." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="270" width="630" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="6" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="326" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="FastAPI → Repository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="326" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="save_matrix() stores D2 if it was newly built." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="326" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="7-8" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="374" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="FastAPI ↔ Allocator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="374" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="Run baseline() or optimized(), then validate_assignments() and metrics()." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="374" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="9" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="422" width="230" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="FastAPI → Repository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="422" width="620" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="save_run() persists method, runtime, assignments, metrics, and original input snapshot in D3." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="422" width="630" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="10-11" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="478" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="FastAPI → APIClient → Dashboard → Coordinator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="478" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="Return the saved run and display its result and any fallback notice." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="478" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="If no area or base exists, FastAPI returns HTTP 422 before loading D2. If an existing matrix is incomplete, it returns HTTP 409 rather than running either planner. An allocation validation error returns HTTP 422; the transaction does not leave a partial run. A failed OSRM request does not stop planning: each unavailable pair receives a marked straight-line estimate. The database transaction serializes changes to one scenario while its revision is read and its run is saved." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="542" width="1480" height="95" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="9720aad80e14" name="6 Comparison and design constraints">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="6 Comparison and design constraints" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 17" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="The dashboard loads the latest baseline and optimized runs for the current revision through GET /api/scenarios/{id}/runs. It shows side-by-side assignments and metrics only when both results belong to that revision. The display difference is optimized minus baseline; the backend does not store a separate comparison table. Historical runs and their input snapshots remain available through run-history endpoints after a scenario edit." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="The baseline visits areas in Critical, High, Medium, Low order and uses the nearest base with stock. The optimized method uses OR-Tools minimum-cost flow with travel time and one penalty per unmet unit; it does not encode severity priority. Both methods consume the same D2 matrix and are evaluated with the same metrics() function. A proposal never decrements D1 stock, allowing a fair comparison on identical inputs." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="227" width="1480" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="This document models the current source structure, not a planned authentication, dispatch, or live-tracking system. Logical layer boundaries may share one Python module; the concrete deployment has three local Compose services plus external routing and tile services. Review the SRS if a future implementation change alters these responsibilities or message paths." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="336" width="1480" height="95" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="eeda33425a20" name="7 Traceability and references">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="7 Traceability and references" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS Software Design Documents  |  Page 18" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Design view" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Requirement or source" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="118" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Implementation evidence" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="118" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Four logical layers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="166" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Textbook §3.4.2 and Figure 3.6; SRS architecture" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="166" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="frontend/src, backend/app, backend/migrations, compose.yaml" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="166" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Add-area interaction" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="214" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="SRS scenario management; use-case report" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="214" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="App.addArea(), api.addArea(), main.add_area(), repository D1 functions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="214" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Allocation interaction" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="262" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="SRS allocation and travel-time functions; DFD processes 3.0-5.0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="262" width="620" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="main.run_allocation(), routing.py, allocation.py, repository D2/D3 functions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="262" width="630" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Sequence and collaboration notation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="310" width="230" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Textbook §3.6.1 and Figures 3.12-3.13" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="310" width="620" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="Paired Figures 2-3 and 4-5 in this document" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FA;strokeColor=#D6E2EA;strokeWidth=1;fontColor=#172B42;fontFamily=Arial;fontSize=13;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+          <mxGeometry x="910" y="310" width="630" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Sources: Prof. Salman Abdul Moiz, *Software Engineering*, AICTE (2024), Unit 3, printed pp. 78 and 84-85; Document/DRRAS_SRS.pdf; Document/Disaster_Response_Use_Case_Report Final.pdf; Document/Data Flow Diagram.pdf; repository source at commit 8591467." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="382" width="1480" height="71" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

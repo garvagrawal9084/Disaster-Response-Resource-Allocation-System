@@ -4,7 +4,7 @@
 
 DRRAS has a React/Leaflet dashboard, a FastAPI backend, a PostgreSQL/PostGIS database, OSRM matrix routing with a flagged straight-line fallback, a severity-first baseline, and an OR-Tools optimizer. The dashboard compares saved runs on the same scenario revision. Docker Compose runs the three services locally.
 
-Start at [docs/README.md](docs/README.md) for the implementation and [docs/backend.md](docs/backend.md) for the full backend and database walkthrough. The PDFs in `Document/` remain the original coursework requirements. Update the relevant guide and `docs/changes.md` when a meaningful part changes.
+`Document/` holds the professor-facing Word reports and the original coursework PDFs. `docs/` holds private study guides, editable draw.io walkthroughs, and test evidence. Start with [the documentation index](docs/DRRAS_README.drawio), [the backend walkthrough](docs/DRRAS_backend.drawio), and [Pratibha's personal guide](<docs/DRRAS Personal Project Guide.docx>). Update the relevant guide and `docs/DRRAS_changes.drawio` when a meaningful part changes. Professor-facing reports use project facts and student names without textbook or tool attribution; private guides may explain the prescribed textbook concepts.
 
 ## Purpose
 

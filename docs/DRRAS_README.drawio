@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="DRRAS documentation" version="24.7.17" type="device" pages="2">
+  <diagram id="1f7940cd877d" name="Overview">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Overview" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1470" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="DRRAS documentation index  |  Page 1" style="text;html=1;whiteSpace=wrap;overflow=visible;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;fontStyle=0;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Open the draw.io files in this directory with diagrams.net or draw.io Desktop. Each file has editable pages, including text, tables, shapes, and connectors. Start with the backend and database walkthrough (DRRAS_backend.drawio) for the full demonstration, schema, endpoints, routing, optimization, and maintenance notes. The original requirements (../Document/) describe the coursework scope." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="1480" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="- Architecture (DRRAS_architecture.drawio) explains the system components and data flow." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="227" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="- Software design (DRRAS_software_design.drawio) contains the textbook-aligned layered architecture, paired sequence and collaboration diagrams, message explanations, and traceability." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="287" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="- Frontend (DRRAS_frontend.drawio) explains the dashboard, browser state, and API integration." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="347" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="- Docker (DRRAS_docker.drawio) covers startup, settings, development, and database inspection." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="408" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="- Testing report (DRRAS_testing_report.drawio) records textbook-aligned methods, 27 preliminary white box results, 22 pending black box cases, evidence, and the steps needed for team sign-off." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="468" width="1480" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="- Personal design guide (DRRAS_design_guide.drawio) and personal implementation guide (DRRAS_personal_guide.drawio) explain the figures, functions, and decisions for Pratibha Yadav&amp;#x27;s own reference. They are excluded from Git tracking." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="550" width="1480" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="- Change log (DRRAS_changes.drawio) records implementation changes and verification." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=15;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="633" width="1480" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="When changing a subsystem, update its draw.io guide with what changed, where the code lives, how to run it, and what was verified. Add a dated entry for meaningful changes." style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5E1EB;strokeWidth=2;fontColor=#172B42;fontFamily=Arial;fontSize=16;fontStyle=0;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="693" width="1480" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5e8c58289b14" name="Where the reports live">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=0;fillColor=#173B60;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1600" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Where the reports live" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=27;fontColor=#FFFFFF;fontStyle=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="65" y="15" width="1450" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Document contains the professor-facing Word reports: DRRAS Software Design Report, DRRAS Software Testing Report, Garv&amp;#x27;s Black Box Testing Report, UML Class Diagram Report, Structure Charts Report, Transaction DFD Report, and Transform Analysis Report. The original project requirements PDFs remain there as source material." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#D5E1EB;fontFamily=Arial;fontSize=17;fontColor=#172B42;align=left;verticalAlign=middle;spacing=15;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="1480" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="docs contains team guidance and work records. Start with DRRAS Personal Project Guide.docx for a simple explanation of the system, diagrams, and Pratibha&amp;#x27;s white box result. Garv&amp;#x27;s five Study Guide Word files explain his reports. Existing draw.io walkthroughs remain as editable internal references." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#D5E1EB;fontFamily=Arial;fontSize=17;fontColor=#172B42;align=left;verticalAlign=middle;spacing=15;" vertex="1" parent="1">
+          <mxGeometry x="60" y="310" width="1480" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="The testing evidence is in docs/evidence. Pratibha&amp;#x27;s JUnit and coverage JSON are saved there. Garv&amp;#x27;s raw black box result files are to be added when he shares them. Do not treat the older planned B01-B22 table as the executed BB-01–BB-24 suite." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF5FA;strokeColor=#D5E1EB;fontFamily=Arial;fontSize=17;fontColor=#172B42;align=left;verticalAlign=middle;spacing=15;" vertex="1" parent="1">
+          <mxGeometry x="60" y="490" width="1480" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="90" value="DRRAS documentation  |  Page 2" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontColor=#526579;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="65" y="907" width="1450" height="25" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
