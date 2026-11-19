@@ -9,6 +9,8 @@ interface ScenarioMapProps {
   compact?: boolean
 }
 
+const emptyAssignments: Assignment[] = []
+
 function popup(title: string, detail: string): HTMLElement {
   const container = document.createElement('div')
   container.className = 'map-popup'
@@ -20,7 +22,7 @@ function popup(title: string, detail: string): HTMLElement {
   return container
 }
 
-export function ScenarioMap({ scenario, assignments = [], compact = false }: ScenarioMapProps) {
+export function ScenarioMap({ scenario, assignments = emptyAssignments, compact = false }: ScenarioMapProps) {
   const element = useRef<HTMLDivElement>(null)
   const map = useRef<L.Map | null>(null)
   const content = useRef<L.LayerGroup | null>(null)
@@ -97,13 +99,33 @@ export function ScenarioMap({ scenario, assignments = [], compact = false }: Sce
   }, [scenario, assignments, compact])
 
   return (
-    <div className={`map-wrap ${compact ? 'map-wrap--compact' : ''}`}>
-      <div className="map-canvas" ref={element} role="img" aria-label={`Map of ${scenario.name} areas and resource bases`} />
+    <>
+      <div className={`map-wrap ${compact ? 'map-wrap--compact' : ''}`}>
+        <div className="map-canvas" ref={element} role="img" aria-label={`Map of ${scenario.name} areas and resource bases`} />
+      </div>
       {tileError && (
-        <div className="map-fallback" role="status">
-          Map tiles unavailable. Area and base locations remain listed alongside the map.
-        </div>
+        <section className="map-fallback" aria-label="Map location list">
+          <p role="status">Map tiles unavailable. Area and base locations remain listed alongside the map.</p>
+          <div className="map-fallback-lists">
+            <div>
+              <h3>Affected areas</h3>
+              {scenario.areas.length ? (
+                <ul>{scenario.areas.map((area) => (
+                  <li key={area.id}><strong>{area.name}</strong><span>{area.severity} severity · {area.demand} needed</span></li>
+                ))}</ul>
+              ) : <p>No affected areas added.</p>}
+            </div>
+            <div>
+              <h3>Resource bases</h3>
+              {scenario.bases.length ? (
+                <ul>{scenario.bases.map((base) => (
+                  <li key={base.id}><strong>{base.name}</strong><span>{base.quantity} available</span></li>
+                ))}</ul>
+              ) : <p>No resource bases added.</p>}
+            </div>
+          </div>
+        </section>
       )}
-    </div>
+    </>
   )
 }

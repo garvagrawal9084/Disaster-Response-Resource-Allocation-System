@@ -83,7 +83,14 @@ h1, h2, h3, p { margin-top: 0; }
 .map-wrap { position: relative; height: 320px; overflow: hidden; border-radius: 8px; background: #e5eeec; border: 1px solid #e1e9e8; }
 .map-canvas { height: 100%; width: 100%; z-index: 0; }
 .map-wrap--compact { height: 275px; }
-.map-fallback { position: absolute; z-index: 500; left: 10px; bottom: 10px; max-width: 280px; background: #fffef1; color: #735c20; border: 1px solid #eedc96; box-shadow: 0 3px 12px #43534d1c; padding: 8px 10px; border-radius: 6px; font-size: 11px; line-height: 1.35; }
+.map-fallback { margin-top: 10px; background: #fffef1; color: #735c20; border: 1px solid #eedc96; padding: 10px 12px; border-radius: 6px; font-size: 12px; line-height: 1.4; }
+.map-fallback p { margin: 0; }
+.map-fallback-lists { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 12px; margin-top: 8px; }
+.map-fallback h3 { margin: 0 0 4px; font-size: 12px; }
+.map-fallback ul { margin: 0; padding-inline-start: 16px; }
+.map-fallback li + li { margin-top: 4px; }
+.map-fallback li { overflow-wrap: anywhere; }
+.map-fallback li span { display: block; }
 .base-marker { display: grid; place-items: center; border-radius: 50%; background: #163f59; border: 3px solid #fff; box-shadow: 0 3px 10px #08233366; color: white; }
 .base-marker span { font-size: 16px; font-weight: 800; line-height: 1; }
 .map-popup { display: flex; flex-direction: column; gap: 4px; font-family: Inter, "Segoe UI", Arial, sans-serif; }

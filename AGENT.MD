@@ -14,12 +14,12 @@ The project's central evaluation question is whether joint optimization improves
 
 ## Source documents and precedence
 
-- `Document/DRRAS_SRS.pdf`: primary source for scope, required behavior, data model, technology choices, constraints, and metrics.
-- `Document/Disaster_Response_Use_Case_Report Final.pdf`: coordinator and OSRM interactions, normal and exception flows.
-- `Document/Data Flow Diagram.pdf`: system boundary, six processes, and D1/D2/D3 flows. See the discrepancies below before using its Level 2 optimized figure.
-- `Document/DRRAS_Analysis_Classes_CRC_Cards.pdf`: candidate domain objects and responsibilities; these are analysis concepts, not a mandated code class hierarchy.
-- `Document/User Stories.pdf`: three-sprint delivery order and acceptance criteria.
-- `Document/Feasibility Report.pdf`: feasibility and alternative technologies considered. Where it offers alternatives, use the narrower SRS choices.
+- `Document/06 - DRRAS_SRS.pdf`: primary source for scope, required behavior, data model, technology choices, constraints, and metrics.
+- `Document/03 - Disaster_Response_Use_Case_Report Final.pdf`: coordinator and OSRM interactions, normal and exception flows.
+- `Document/05 - Data Flow Diagram.pdf`: system boundary, six processes, and D1/D2/D3 flows. See the discrepancies below before using its Level 2 optimized figure.
+- `Document/04 - DRRAS_Analysis_Classes_CRC_Cards.pdf`: candidate domain objects and responsibilities; these are analysis concepts, not a mandated code class hierarchy.
+- `Document/02 - User Stories.pdf`: three-sprint delivery order and acceptance criteria.
+- `Document/01 - Feasibility Report.pdf`: feasibility and alternative technologies considered. Where it offers alternatives, use the narrower SRS choices.
 
 If documents disagree, use the SRS as the implementation baseline, record the discrepancy, and resolve behavior that affects evaluation before coding it.
 
@@ -99,7 +99,7 @@ For both methods, report average and maximum response time, coverage ratio, unme
 
 ## Document conflicts and implementation decisions
 
-- The `Data Flow Diagram.pdf` Level 2 **Optimized** figure repeats the baseline chain and labels. Use SRS process 5.1-5.5 (build model, solve, validate, calculate metrics, store) as the intended optimizer flow.
+- The `05 - Data Flow Diagram.pdf` Level 2 **Optimized** figure repeats the baseline chain and labels. Use SRS process 5.1-5.5 (build model, solve, validate, calculate metrics, store) as the intended optimizer flow.
 - The use-case report includes `DR-007 Test Scenarios`, while the SRS calls sample-scenario runs project testing rather than a user-facing use case. Build sample data and evaluation; do not add a separate product feature solely from DR-007.
 - A CRC card says a resource base reduces stock when resources are sent, but the SRS requires independent baseline and optimized runs on identical stock. Treat runs as plans against unchanged scenario stock unless a future operational deployment feature is explicitly specified.
 - The SRS narrative suggests the optimizer can favor more severe areas, but its stated objective contains only travel cost and **unweighted** unmet demand. The optimizer uses the unweighted SRS objective, with a configurable penalty per unmet unit. The baseline gives priority to severity.

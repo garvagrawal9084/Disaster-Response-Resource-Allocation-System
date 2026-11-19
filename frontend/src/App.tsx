@@ -10,7 +10,7 @@ import { ScenarioMap } from './ScenarioMap'
 import { RunDetails } from './RunDetails'
 import { RunHistory } from './RunHistory'
 import { TravelMatrix } from './TravelMatrix'
-import { EmptyState, Panel, PanelHeading, SeverityBadge, formatNumber, metricDefinitions, metricValue } from './dashboard'
+import { EmptyState, Panel, PanelHeading, SeverityBadge, formatNumber, metricDefinitions, metricValue, runMetric } from './dashboard'
 import type { Area, Method, ResourceBase, Scenario, Severity } from './types'
 
 type View = 'overview' | 'scenario' | 'matrix' | 'allocations' | 'comparison' | 'history'
@@ -363,7 +363,7 @@ export default function App() {
               <div className="run-toolbar"><div><div className="eyebrow">D3 / ALLOCATION RESULTS</div><h2>Run allocations</h2><p>Both methods use the current scenario and share a saved travel-time matrix.</p></div><div className="toolbar-actions"><button className="secondary-button" disabled={pending} onClick={() => runAllocation('baseline')}><Play size={15} /> Run baseline</button><button className="primary-button" disabled={pending} onClick={() => runAllocation('optimized')}><Play size={15} fill="currentColor" /> Run optimized</button></div></div>
               <div className="tabs" role="tablist" aria-label="Allocation method"><button role="tab" aria-selected={runTab === 'baseline'} className={runTab === 'baseline' ? 'tab--active' : ''} onClick={() => setRunTab('baseline')}>Baseline <span>{baseline ? 'Ready' : 'Not run'}</span></button><button role="tab" aria-selected={runTab === 'optimized'} className={runTab === 'optimized' ? 'tab--active' : ''} onClick={() => setRunTab('optimized')}>Optimized <span>{optimized ? 'Ready' : 'Not run'}</span></button></div>
               {selectedRun ? <>
-                <div className="run-summary-grid"><StatCard label="Demand coverage" value={metricValue(selectedRun.metrics.coverageRatio, '%')} helper={`${demand - selectedRun.metrics.unmetDemand} of ${demand} units assigned`} icon={Activity} /><StatCard label="Avg. response" value={metricValue(selectedRun.metrics.averageResponseTime, 'min')} helper="Weighted by dispatched units" icon={Clock3} tone="blue" /><StatCard label="Unmet demand" value={String(selectedRun.metrics.unmetDemand)} helper="Units still needed" icon={CircleAlert} tone="coral" /><StatCard label="Resource use" value={metricValue(selectedRun.metrics.utilization, '%')} helper={`${supply} total units available`} icon={Building2} tone="gold" /></div>
+                <div className="run-summary-grid"><StatCard label="Demand coverage" value={metricValue(selectedRun.metrics.coverageRatio, '%')} helper={`${demand - selectedRun.metrics.unmetDemand} of ${demand} units assigned`} icon={Activity} /><StatCard label="Avg. response" value={metricValue(runMetric(selectedRun, 'averageResponseTime'), 'min')} helper={selectedRun.assignments.length ? 'Weighted by dispatched units' : 'No ambulances assigned'} icon={Clock3} tone="blue" /><StatCard label="Unmet demand" value={String(selectedRun.metrics.unmetDemand)} helper="Units still needed" icon={CircleAlert} tone="coral" /><StatCard label="Resource use" value={metricValue(selectedRun.metrics.utilization, '%')} helper={`${supply} total units available`} icon={Building2} tone="gold" /></div>
                 <RunDetails scenario={scenario} run={selectedRun} assignmentAction={
                   <button className="text-button" onClick={() => navigate('comparison')}>Compare methods <ArrowRight size={16} /></button>
                 } />
@@ -376,7 +376,40 @@ export default function App() {
               {baseline && optimized ? <>
                 <div className="compare-intro"><div><div className="eyebrow">SAME SCENARIO · SHARED TRAVEL MATRIX</div><h2>Two plans, one clear comparison</h2><p>Review how the two methods allocate ambulances under the same conditions.</p></div><span className="compare-badge"><Check size={16} /> Both runs saved</span></div>
                 <div className="compare-maps"><Panel><PanelHeading eyebrow="METHOD 01" title="Severity-first baseline" action={<span className="method-dot method-dot--blue" />} /><ScenarioMap scenario={scenario} assignments={baseline.assignments} compact /><div className="compare-map-foot"><strong>{metricValue(baseline.metrics.coverageRatio, '%')}</strong> coverage <span>{baseline.assignments.length} assignments</span></div></Panel><Panel><PanelHeading eyebrow="METHOD 02" title="Optimized" action={<span className="method-dot method-dot--teal" />} /><ScenarioMap scenario={scenario} assignments={optimized.assignments} compact /><div className="compare-map-foot"><strong>{metricValue(optimized.metrics.coverageRatio, '%')}</strong> coverage <span>{optimized.assignments.length} assignments</span></div></Panel></div>
-                <Panel><PanelHeading eyebrow="SIDE-BY-SIDE ANALYSIS" title="Performance comparison" action={<span className="count-pill">{scenario.name}</span>} /><div className="table-scroll"><table className="comparison-table"><thead><tr><th>Metric</th><th>Baseline</th><th>Optimized</th><th>Difference</th><th>Better when</th></tr></thead><tbody>{metricDefinitions.map((metric) => { const before = baseline.metrics[metric.key]; const after = optimized.metrics[metric.key]; const difference = after - before; const improved = metric.better === 'lower' ? difference < -0.0001 : difference > 0.0001; return <tr key={metric.key}><td>{metric.label}</td><td>{metricValue(before, metric.unit)}</td><td><strong>{metricValue(after, metric.unit)}</strong></td><td><span className={`delta ${improved ? 'delta--good' : difference === 0 ? 'delta--neutral' : 'delta--bad'}`}>{difference > 0 ? '+' : ''}{metricValue(difference, metric.unit)}</span></td><td>{metric.better === 'lower' ? 'Lower' : 'Higher'}</td></tr> })}<tr><td>Allocation runtime</td><td>{formatNumber(baseline.runtimeMs, 2)} ms</td><td><strong>{formatNumber(optimized.runtimeMs, 2)} ms</strong></td><td>{formatNumber(optimized.runtimeMs - baseline.runtimeMs, 2)} ms</td><td>Lower</td></tr></tbody></table></div><div className="panel-footnote"><CircleAlert size={16} /> {baseline.usesFallback ? 'The shared matrix includes straight-line estimates.' : 'The shared matrix uses OSRM road estimates.'}</div></Panel>
+                <Panel>
+                  <PanelHeading eyebrow="SIDE-BY-SIDE ANALYSIS" title="Performance comparison" action={<span className="count-pill">{scenario.name}</span>} />
+                  <div className="table-scroll">
+                    <table className="comparison-table">
+                      <thead><tr><th>Metric</th><th>Baseline</th><th>Optimized</th><th>Difference</th><th>Better when</th></tr></thead>
+                      <tbody>
+                        {metricDefinitions.map((metric) => {
+                          const before = runMetric(baseline, metric.key)
+                          const after = runMetric(optimized, metric.key)
+                          const difference = before === null || after === null ? null : after - before
+                          const improved = difference !== null && (metric.better === 'lower' ? difference < -0.0001 : difference > 0.0001)
+                          return (
+                            <tr key={metric.key}>
+                              <td>{metric.label}</td>
+                              <td>{metricValue(before, metric.unit)}</td>
+                              <td><strong>{metricValue(after, metric.unit)}</strong></td>
+                              <td>{difference === null ? 'N/A' : (
+                                <span className={`delta ${improved ? 'delta--good' : difference === 0 ? 'delta--neutral' : 'delta--bad'}`}>
+                                  {difference > 0 ? '+' : ''}{metricValue(difference, metric.unit)}
+                                </span>
+                              )}</td>
+                              <td>{metric.better === 'lower' ? 'Lower' : 'Higher'}</td>
+                            </tr>
+                          )
+                        })}
+                        <tr><td>Allocation runtime</td><td>{formatNumber(baseline.runtimeMs, 2)} ms</td><td><strong>{formatNumber(optimized.runtimeMs, 2)} ms</strong></td><td>{formatNumber(optimized.runtimeMs - baseline.runtimeMs, 2)} ms</td><td>Lower</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="panel-footnote">
+                    <CircleAlert size={16} />
+                    {baseline.usesFallback ? 'The shared matrix includes straight-line estimates.' : 'The shared matrix uses OSRM road estimates.'}
+                  </div>
+                </Panel>
               </> : <Panel><EmptyState title="Both allocation runs are needed" body={`Run the ${!baseline && !optimized ? 'baseline and optimized' : !baseline ? 'baseline' : 'optimized'} allocation to see a side-by-side comparison.`} action={<button className="primary-button" onClick={() => navigate('allocations')}>Go to allocations <ArrowRight size={16} /></button>} /></Panel>}
             </>
           )}

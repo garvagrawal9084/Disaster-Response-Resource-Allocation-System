@@ -1,6 +1,6 @@
 import { CircleAlert } from 'lucide-react'
 import type { ReactNode } from 'react'
-import { EmptyState, Panel, PanelHeading, SeverityBadge, formatNumber, metricDefinitions, metricValue } from './dashboard'
+import { EmptyState, Panel, PanelHeading, SeverityBadge, formatNumber, metricDefinitions, metricValue, runMetric } from './dashboard'
 import { severityColors, severityOrder } from './data'
 import { ScenarioMap } from './ScenarioMap'
 import type { AllocationRun, Scenario } from './types'
@@ -33,7 +33,7 @@ export function RunDetails({ scenario, run, assignmentAction }: { scenario: Scen
           <PanelHeading title="Performance metrics" />
           <div className="metric-list">
             {metricDefinitions.map((metric) => (
-              <div className="metric-line" key={metric.key}><span>{metric.label}</span><strong>{metricValue(run.metrics[metric.key], metric.unit)}</strong></div>
+              <div className="metric-line" key={metric.key}><span>{metric.label}</span><strong>{metricValue(runMetric(run, metric.key), metric.unit)}</strong></div>
             ))}
             <div className="metric-line"><span>Allocation runtime</span><strong>{formatNumber(run.runtimeMs, 2)} ms</strong></div>
           </div>
